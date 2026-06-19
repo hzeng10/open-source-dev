@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战略 PPT 第3页 · 三大转变的 AI-Coding 落地措施（3–5 年规划）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: #05070f;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .stage {
+    width: 1280px; height: 720px;
+    transform: scale(var(--s, 1));
+    transform-origin: center center;
+  }
+  @media (max-aspect-ratio: 16/9) { .stage { --s: calc(100vw / 1280); } }
+  @media (min-aspect-ratio: 16/9) { .stage { --s: calc(100vh / 720); } }
+
+  .slide {
+    position: relative;
+    width: 1280px; height: 720px;
+    background:
+      radial-gradient(1100px 520px at 18% -8%, rgba(56,128,255,.22), transparent 60%),
+      radial-gradient(900px 480px at 100% 0%, rgba(140,86,255,.20), transparent 55%),
+      radial-gradient(800px 600px at 85% 110%, rgba(0,200,190,.12), transparent 60%),
+      linear-gradient(160deg, #0a1020 0%, #070b16 55%, #05070f 100%);
+    color: #eaf0fb;
+    padding: 26px 40px 18px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .slide::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(120,160,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,160,255,.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 78%);
+    pointer-events: none;
+  }
+
+  /* ===== 头部 ===== */
+  .head { position: relative; z-index: 2; flex: 0 0 auto; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; letter-spacing: 3px; color: #7fd4ff;
+    text-transform: uppercase; margin-bottom: 6px; font-weight: 700;
+  }
+  .eyebrow::before { content: "◆"; color: #ffcf5c; font-size: 11px; }
+  .eyebrow .pg { color: #5f73a0; letter-spacing: 1px; font-weight: 600; }
+  h1.title {
+    font-size: 23px; line-height: 1.25; font-weight: 800; letter-spacing: .5px;
+    background: linear-gradient(92deg, #ffffff 0%, #cfe2ff 50%, #a9c6ff 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .subtitle { margin-top: 7px; font-size: 13.5px; color: #cfdcf2; font-weight: 500; padding-left: 13px; position: relative; }
+  .subtitle::before { content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 4px; border-radius: 3px; background: linear-gradient(#7fd4ff, #8c56ff); }
+  .subtitle b { color: #ffcf5c; font-weight: 800; }
+
+  /* ===== 三列措施卡 ===== */
+  .cols { position: relative; z-index: 2; margin-top: 13px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .col {
+    position: relative;
+    background: linear-gradient(165deg, rgba(24,34,60,.66), rgba(12,18,34,.66));
+    border: 1px solid rgba(120,160,255,.18);
+    border-radius: 13px; padding: 13px 14px 12px;
+    display: flex; flex-direction: column;
+  }
+  .col::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--c1), var(--c2)); border-radius: 13px 13px 0 0; }
+  .c-head { display: flex; align-items: center; gap: 9px; }
+  .c-head .num {
+    font-size: 13px; font-weight: 800; color: #0a1020;
+    background: linear-gradient(120deg, var(--c1), var(--c2));
+    width: 25px; height: 25px; border-radius: 7px; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .c-head .dim { font-size: 16.5px; font-weight: 800; color: #fff; }
+  .c-flow { margin-top: 7px; font-size: 11px; font-weight: 700; color: var(--c2); letter-spacing: .2px; }
+  .c-flow .from { color: #8fa0bd; }
+
+  .measures { margin-top: 10px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+  .m { display: flex; gap: 8px; }
+  .m .mn {
+    font-size: 10.5px; font-weight: 800; color: var(--c2);
+    border: 1px solid var(--c2); border-radius: 6px;
+    width: 18px; height: 18px; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .m .mt { font-size: 11.5px; line-height: 1.46; color: #c6d3ea; }
+  .m .mt b { color: #fff; font-weight: 700; }
+
+  .frontier {
+    margin-top: 11px;
+    background: linear-gradient(120deg, rgba(255,207,92,.10), rgba(120,150,255,.06));
+    border: 1px solid rgba(255,207,92,.25);
+    border-radius: 9px; padding: 8px 10px;
+  }
+  .frontier .ft-t { font-size: 10px; font-weight: 800; color: #ffd87a; letter-spacing: .8px; }
+  .frontier .ft-d { font-size: 10.8px; line-height: 1.45; color: #e6ddc8; margin-top: 3px; }
+  .frontier .ft-d b { color: #ffe39a; font-weight: 700; }
+
+  /* ===== 路线图 ===== */
+  .road { position: relative; z-index: 2; margin-top: 13px; display: flex; align-items: stretch; gap: 8px; }
+  .rstep { flex: 1; background: linear-gradient(170deg, rgba(20,30,54,.6), rgba(11,16,30,.6)); border: 1px solid rgba(120,160,255,.18); border-radius: 10px; padding: 8px 12px; }
+  .rstep .rn { font-size: 10.5px; font-weight: 800; color: #7fd4ff; letter-spacing: .5px; }
+  .rstep .rh { font-size: 13px; font-weight: 800; color: #fff; display: inline-block; margin-left: 6px; }
+  .rstep .rd { font-size: 10.3px; line-height: 1.4; color: #aebfdc; margin-top: 4px; }
+  .rarw { display: flex; align-items: center; color: #6f86c0; font-size: 16px; font-weight: 800; }
+
+  /* ===== 目标徽章 ===== */
+  .targets { position: relative; z-index: 2; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 9px; flex-wrap: wrap; }
+  .targets .lbl { font-size: 10.5px; color: #8fa0c2; font-weight: 700; }
+  .tb { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,200,170,.09); border: 1px solid rgba(95,224,192,.3); border-radius: 20px; padding: 3px 11px; }
+  .tb .tv { font-size: 13px; font-weight: 800; color: #7fe9d0; }
+  .tb .tl { font-size: 10px; color: #c7d4ec; }
+
+  /* ===== 底栏 ===== */
+  .foot { position: relative; z-index: 2; margin-top: auto; padding-top: 10px; }
+  .cta {
+    font-size: 14px; font-weight: 800; text-align: center; letter-spacing: .4px;
+    background: linear-gradient(92deg, #7fd4ff, #b79bff 55%, #ffcf5c);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <section class="slide">
+    <!-- 头部 -->
+    <header class="head">
+      <div class="eyebrow">落地措施 · 3–5 年规划 · AI-Coding 实施路径 <span class="pg">／ 03</span></div>
+      <h1 class="title">从战略判断到落地：三大转变的 AI-Coding 实施路径（3–5 年规划）</h1>
+      <p class="subtitle">围绕 <b>知识资本化 · 流程 Agent 化 · 交付资产化</b> 三条主线，分阶段把战略转变沉淀为可持续的产能与差异化。</p>
+    </header>
+
+    <!-- 三列措施 -->
+    <div class="cols">
+      <!-- 列① -->
+      <div class="col" style="--c1:#4f9bff;--c2:#7fd4ff;">
+        <div class="c-head"><div class="num">01</div><div class="dim">存量定位</div></div>
+        <div class="c-flow"><span class="from">成本中心</span> → 产能杠杆</div>
+        <div class="measures">
+          <div class="m"><div class="mn">1</div><div class="mt"><b>建代码知识底座/图谱</b>：统一索引几十个仓库，建依赖与调用链图谱、自动生成架构与业务规则文档，沉淀持久上下文。</div></div>
+          <div class="m"><div class="mn">2</div><div class="mt"><b>立「AI 可读性」工程标准</b>：结构化接口契约 + 知识卡片，让存量持续资产化、可被任意 Agent 调用。</div></div>
+          <div class="m"><div class="mn">3</div><div class="mt"><b>知识底座服务化</b>：作为内部知识中枢，新人与 Agent 数小时读懂存量，跨域协同有统一事实源。</div></div>
+        </div>
+        <div class="frontier"><div class="ft-t">🔭 3–5 年前沿</div><div class="ft-d">仓库级<b>知识图谱驱动的自动定位与修复</b>成熟，「代码知识资本」成为核心数字资产。</div></div>
+      </div>
+      <!-- 列② -->
+      <div class="col" style="--c1:#6e8bff;--c2:#9b8bff;">
+        <div class="c-head"><div class="num">02</div><div class="dim">交付模式</div></div>
+        <div class="c-flow"><span class="from">人力堆叠</span> → AI 产能（人效跃升）</div>
+        <div class="measures">
+          <div class="m"><div class="mn">1</div><div class="mt"><b>流程重构「Spec 驱动 + Agent 执行 + 人工把关」</b>：人定义意图与验收，Agent 自主实现-自测，人专注审查与架构。</div></div>
+          <div class="m"><div class="mn">2</div><div class="mt"><b>建 Agent 编队 + 平台编排</b>：多 Agent 并行跨仓库作业（对齐「IDE 可选、控制权转向平台」趋势）。</div></div>
+          <div class="m"><div class="mn">3</div><div class="mt"><b>角色/考核转型 + 治理门禁 + FinOps 看板</b>：从「代码产量」转向「Spec 清晰度·审查效能·交付吞吐」，可控可量化。</div></div>
+        </div>
+        <div class="frontier"><div class="ft-t">🔭 3–5 年前沿</div><div class="ft-d"><b>小型任务专用模型 × Agent 编队</b>成主力，「小核心团队 + 大规模 Agent 产能」，工程师即编排者/审查官。</div></div>
+      </div>
+      <!-- 列③ -->
+      <div class="col" style="--c1:#00c2a8;--c2:#5fe0c0;">
+        <div class="c-head"><div class="num">03</div><div class="dim">现场定制</div></div>
+        <div class="c-flow"><span class="from">一次性成本</span> → 可复制差异化</div>
+        <div class="measures">
+          <div class="m"><div class="mn">1</div><div class="mt"><b>平台化 + 内核/定制分离</b>：把定制从「改主干」变为「生成适配/插件层」，遏制分支爆炸。</div></div>
+          <div class="m"><div class="mn">2</div><div class="mt"><b>建现场 AI 交付助手</b>：基于知识底座，现场自然语言完成定制/配置/修复，需求 → AI 生成定制层。</div></div>
+          <div class="m"><div class="mn">3</div><div class="mt"><b>定制资产化为模板库/行业蓝图</b>：跨客户复制，「定制即资产」飞轮 + 自动化回归保可靠。</div></div>
+        </div>
+        <div class="frontier"><div class="ft-t">🔭 3–5 年前沿</div><div class="ft-d"><b>现场即时定制（real-time / on-site）</b>成护城河，从「一客一版」走向「一平台 N 蓝图」。</div></div>
+      </div>
+    </div>
+
+    <!-- 路线图 -->
+    <div class="road">
+      <div class="rstep"><span class="rn">第 1 年</span><span class="rh">夯基</span><div class="rd">建知识底座、Spec 驱动试点、平台化/内核定制分离起步（选 2–3 仓库/特性试点）。</div></div>
+      <div class="rarw">›</div>
+      <div class="rstep"><span class="rn">第 2–3 年</span><span class="rh">提效</span><div class="rd">Agent 编队规模化、现场 AI 助手上线、治理门禁 + FinOps 固化。</div></div>
+      <div class="rarw">›</div>
+      <div class="rstep"><span class="rn">第 3–5 年</span><span class="rh">领先</span><div class="rd">知识资本沉淀、模板库/行业蓝图成熟、AI 原生交付规模复制。</div></div>
+    </div>
+
+    <!-- 示意性目标 -->
+    <div class="targets">
+      <span class="lbl">示意性北极星目标（目标·非承诺）：</span>
+      <span class="tb"><span class="tv">×3–5</span><span class="tl">人效</span></span>
+      <span class="tb"><span class="tv">↓50%+</span><span class="tl">现场交付周期</span></span>
+      <span class="tb"><span class="tv">≥60%</span><span class="tl">定制复用率</span></span>
+      <span class="tb"><span class="tv">≥70%</span><span class="tl">AI 参与代码占比</span></span>
+    </div>
+
+    <!-- 底栏 -->
+    <footer class="foot">
+      <div class="cta">以「知识资本化 · 流程 Agent 化 · 交付资产化」三条主线，3–5 年把 AI-Coding 红利沉淀为可持续的产能与竞争壁垒</div>
+    </footer>
+  </section>
+</div>
+</body>
+</html>
