@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战略 PPT 第5页 · 高质量批量交付的四大保障</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: #05070f;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .stage { width: 1280px; height: 720px; transform: scale(var(--s, 1)); transform-origin: center center; }
+  @media (max-aspect-ratio: 16/9) { .stage { --s: calc(100vw / 1280); } }
+  @media (min-aspect-ratio: 16/9) { .stage { --s: calc(100vh / 720); } }
+
+  .slide {
+    position: relative; width: 1280px; height: 720px;
+    background:
+      radial-gradient(1100px 520px at 18% -8%, rgba(56,128,255,.22), transparent 60%),
+      radial-gradient(900px 480px at 100% 0%, rgba(140,86,255,.20), transparent 55%),
+      radial-gradient(820px 600px at 85% 110%, rgba(0,200,190,.13), transparent 60%),
+      linear-gradient(160deg, #0a1020 0%, #070b16 55%, #05070f 100%);
+    color: #eaf0fb; padding: 28px 42px 18px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .slide::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(120,160,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,160,255,.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 78%);
+    pointer-events: none;
+  }
+
+  /* 头部 */
+  .head { position: relative; z-index: 2; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 3px; color: #7fd4ff; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+  .eyebrow::before { content: "◆"; color: #ffcf5c; font-size: 11px; }
+  .eyebrow .pg { color: #5f73a0; letter-spacing: 1px; font-weight: 600; }
+  h1.title { font-size: 24px; line-height: 1.28; font-weight: 800; letter-spacing: .4px;
+    background: linear-gradient(92deg, #ffffff 0%, #cfe2ff 50%, #a9c6ff 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: #d3e0f5; font-weight: 500; padding-left: 13px; position: relative; }
+  .sub::before { content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 4px; border-radius: 3px; background: linear-gradient(#7fd4ff, #8c56ff); }
+  .sub b { color: #ffcf5c; font-weight: 800; }
+
+  /* 2×2 四保障 */
+  .grid { position: relative; z-index: 2; margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; flex: 1; }
+  .card {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, rgba(24,34,60,.7), rgba(12,18,34,.68));
+    border: 1px solid rgba(120,160,255,.18); border-left: 4px solid var(--c2);
+    border-radius: 13px; padding: 13px 16px 12px;
+    display: flex; flex-direction: column;
+  }
+  .card::after { content: ""; position: absolute; right: -30px; top: -30px; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle, var(--c2), transparent 70%); opacity: .12; }
+  .c-head { display: flex; align-items: center; gap: 10px; }
+  .c-head .num { font-size: 14px; font-weight: 800; color: #0a1020; background: linear-gradient(120deg, var(--c1), var(--c2)); width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .c-head .nm { font-size: 17px; font-weight: 800; color: #fff; }
+  .c-head .en { font-size: 10.5px; font-weight: 700; color: var(--c2); letter-spacing: .5px; margin-top: 1px; }
+  .pts { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .pt { font-size: 11.8px; line-height: 1.45; color: #c8d5ec; display: flex; gap: 7px; }
+  .pt::before { content: "▸"; color: var(--c2); font-weight: 800; flex: 0 0 auto; }
+  .pt b { color: #fff; font-weight: 700; }
+  .anchor { margin-top: 9px; display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
+    background: rgba(255,207,92,.08); border: 1px solid rgba(255,207,92,.24); border-radius: 8px; padding: 4px 10px; }
+  .anchor .ic { color: #ffd87a; font-size: 11px; }
+  .anchor .tx { font-size: 10px; color: #e3d6b8; line-height: 1.3; }
+  .anchor .tx b { color: #ffd87a; font-weight: 800; }
+
+  /* 底栏 */
+  .foot { position: relative; z-index: 2; margin-top: 14px; }
+  .cta { font-size: 14.5px; font-weight: 800; text-align: center; letter-spacing: .4px;
+    background: linear-gradient(92deg, #7fd4ff, #b79bff 55%, #ffcf5c);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <section class="slide">
+    <!-- 头部 -->
+    <header class="head">
+      <div class="eyebrow">高质量批量交付 · 保障体系 · 落地可信 <span class="pg">／ 05</span></div>
+      <h1 class="title">让规模化不牺牲质量——AI-Coding 高质量批量交付的四大保障</h1>
+      <p class="sub">产能是引擎，保障是方向盘与刹车——四重保障让「快」同时 <b>稳 · 省 · 可治理</b>，确保不落入「40% 失败项目」。</p>
+    </header>
+
+    <!-- 2×2 四保障 -->
+    <div class="grid">
+      <!-- ① 质量内建 -->
+      <div class="card" style="--c1:#4f9bff;--c2:#7fd4ff;">
+        <div class="c-head"><div class="num">01</div><div><div class="nm">质量内建</div><div class="en">QUALITY BY DESIGN</div></div></div>
+        <div class="pts">
+          <div class="pt"><span><b>AI 生成 + AI 审查 + 关键路径人工把关</b>，双重门禁不放过高风险改动</span></div>
+          <div class="pt"><span>自动化单测/集成/回归生成 + <b>运行时验证</b>，质量左移</span></div>
+          <div class="pt"><span>面向<b>推理引擎/调度</b>的性能与稳定性基线，达标才放行</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">业界 <b>45%</b> AI 生成代码含安全缺陷 → 质量门禁是必选项</span></div>
+      </div>
+
+      <!-- ② 安全合规与数据出域 -->
+      <div class="card" style="--c1:#6e8bff;--c2:#9b8bff;">
+        <div class="c-head"><div class="num">02</div><div><div class="nm">安全合规与数据出域</div><div class="en">SECURITY &amp; COMPLIANCE</div></div></div>
+        <div class="pts">
+          <div class="pt"><span>分级授权 + <b>私有化/内网部署</b>，代码与数据<b>不出域</b></span></div>
+          <div class="pt"><span>IP/开源许可证扫描 + 全流程<b>审计留痕</b></span></div>
+          <div class="pt"><span>国产化与<b>等保合规</b>，适配政企/智算硬约束</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">现场定制把代码/数据带到客户环境 → 安全是<b>不可逾越的红线</b></span></div>
+      </div>
+
+      <!-- ③ 投入产出与节奏 -->
+      <div class="card" style="--c1:#00c2a8;--c2:#5fe0c0;">
+        <div class="c-head"><div class="num">03</div><div><div class="nm">投入产出与节奏</div><div class="en">ROI &amp; CADENCE</div></div></div>
+        <div class="pts">
+          <div class="pt"><span><b>先试点后规模</b>：以可量化收益解锁下一阶段预算</span></div>
+          <div class="pt"><span><b>FinOps 单位成本看板</b>：每分 AI 投入对得上交付产出</span></div>
+          <div class="pt"><span>设价值<b>基线与回本逻辑</b>，让收益可审计、可追责</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx"><b>75%</b> 企业用 AI 工具，仅少数因「缺结构化落地」获规模化收益</span></div>
+      </div>
+
+      <!-- ④ 组织与人才转型 -->
+      <div class="card" style="--c1:#d0883c;--c2:#ffcf5c;">
+        <div class="c-head"><div class="num">04</div><div><div class="nm">组织与人才转型</div><div class="en">PEOPLE &amp; ORG</div></div></div>
+        <div class="pts">
+          <div class="pt"><span>角色转型：工程师 → <b>编排者 / 审查官</b></span></div>
+          <div class="pt"><span>考核重构：代码产量 → <b>Spec 清晰度·审查效能·交付吞吐</b></span></div>
+          <div class="pt"><span><b>试点先行 + AB 对照</b> + 培训激励，变革管理破阻力</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">McKinsey：AI-first 时代须<b>重塑技术人才队伍</b>，组织是落地胜负手</span></div>
+      </div>
+    </div>
+
+    <!-- 底栏 -->
+    <footer class="foot">
+      <div class="cta">有保障的产能，才是可持续的产能 —— 让 AI-Coding 的「快」，经得起质量、安全、成本与组织的检验</div>
+    </footer>
+  </section>
+</div>
+</body>
+</html>
