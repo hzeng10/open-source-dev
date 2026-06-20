@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战略 PPT 第7页 · 人力堆叠→AI产能 的作业系统</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: #05070f;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .stage { width: 1280px; height: 720px; transform: scale(var(--s, 1)); transform-origin: center center; }
+  @media (max-aspect-ratio: 16/9) { .stage { --s: calc(100vw / 1280); } }
+  @media (min-aspect-ratio: 16/9) { .stage { --s: calc(100vh / 720); } }
+
+  .slide {
+    position: relative; width: 1280px; height: 720px;
+    background:
+      radial-gradient(1100px 520px at 18% -8%, rgba(56,128,255,.22), transparent 60%),
+      radial-gradient(900px 480px at 100% 0%, rgba(140,86,255,.20), transparent 55%),
+      radial-gradient(820px 600px at 85% 110%, rgba(0,200,190,.13), transparent 60%),
+      linear-gradient(160deg, #0a1020 0%, #070b16 55%, #05070f 100%);
+    color: #eaf0fb; padding: 24px 42px 14px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .slide::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(120,160,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,160,255,.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 78%);
+    pointer-events: none;
+  }
+
+  /* 头部 */
+  .head { position: relative; z-index: 2; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; letter-spacing: 2.5px; color: #9b8bff; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
+  .eyebrow::before { content: "◆"; color: #ffcf5c; font-size: 11px; }
+  .eyebrow .pg { color: #5f73a0; letter-spacing: 1px; font-weight: 600; }
+  h1.title { font-size: 22px; line-height: 1.26; font-weight: 800; letter-spacing: .3px;
+    background: linear-gradient(92deg, #ffffff 0%, #cfe2ff 50%, #b9a9ff 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .thesis { margin-top: 7px; font-size: 12.8px; line-height: 1.48; color: #d3e0f5; font-weight: 500; padding-left: 13px; position: relative; }
+  .thesis::before { content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 4px; border-radius: 3px; background: linear-gradient(#7fd4ff, #8c56ff 55%, #5fe0c0); }
+  .thesis b { color: #ffcf5c; font-weight: 800; }
+
+  /* 作业流水线细条带 */
+  .pipe { position: relative; z-index: 2; margin-top: 11px; display: flex; align-items: center; gap: 8px; }
+  .pipe .lab { font-size: 10px; font-weight: 800; color: #8fa0c2; letter-spacing: .5px; flex: 0 0 auto; padding-right: 2px; }
+  .pipe .chip { flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #dce7fb;
+    background: linear-gradient(160deg, rgba(28,40,70,.7), rgba(14,20,38,.7)); border: 1px solid rgba(120,160,255,.22);
+    border-radius: 8px; padding: 6px 6px; }
+  .pipe .chip b { color: #fff; }
+  .pipe .arw { color: #7f8fc4; font-size: 14px; font-weight: 800; flex: 0 0 auto; }
+  .pipe .role { font-size: 9.8px; font-weight: 700; color: #7fe9d0; flex: 0 0 auto; padding-left: 4px; }
+
+  /* 2×2 四措施 */
+  .grid { position: relative; z-index: 2; margin-top: 11px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 11px; flex: 1; }
+  .card {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, rgba(24,34,60,.7), rgba(12,18,34,.68));
+    border: 1px solid rgba(120,160,255,.18); border-left: 4px solid var(--c2);
+    border-radius: 12px; padding: 11px 15px 10px;
+    display: flex; flex-direction: column;
+  }
+  .card::after { content: ""; position: absolute; right: -30px; top: -30px; width: 108px; height: 108px; border-radius: 50%; background: radial-gradient(circle, var(--c2), transparent 70%); opacity: .12; }
+  .c-head { display: flex; align-items: center; gap: 10px; }
+  .c-head .num { font-size: 13px; font-weight: 800; color: #0a1020; background: linear-gradient(120deg, var(--c1), var(--c2)); width: 27px; height: 27px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .c-head .nm { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.05; }
+  .c-head .en { font-size: 9px; font-weight: 700; color: var(--c2); letter-spacing: 1px; margin-top: 1px; }
+  .c-head .stage-tag { margin-left: auto; font-size: 9.5px; font-weight: 800; color: var(--c2); background: rgba(127,212,255,.08); border: 1px solid var(--c2); border-radius: 20px; padding: 2px 9px; flex: 0 0 auto; }
+  .pts { margin-top: 8px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+  .pt { font-size: 11.1px; line-height: 1.4; color: #c8d5ec; display: flex; gap: 6px; }
+  .pt::before { content: "▸"; color: var(--c2); font-weight: 800; flex: 0 0 auto; }
+  .pt b { color: #fff; font-weight: 700; }
+  .pt .ins { color: #ffd87a; font-weight: 700; }
+  .anchor { margin-top: 7px; display: flex; align-items: flex-start; gap: 6px;
+    background: rgba(255,207,92,.08); border: 1px solid rgba(255,207,92,.24); border-radius: 8px; padding: 4px 10px; }
+  .anchor .ic { color: #ffd87a; font-size: 10px; line-height: 1.4; flex: 0 0 auto; }
+  .anchor .tx { font-size: 9.8px; color: #e3d6b8; line-height: 1.32; }
+  .anchor .tx b { color: #ffd87a; font-weight: 800; }
+
+  /* 护栏 */
+  .guard { position: relative; z-index: 2; margin-top: 11px; display: flex; align-items: center; gap: 11px;
+    background: linear-gradient(100deg, rgba(220,150,50,.14), rgba(180,70,70,.10));
+    border: 1px solid rgba(240,180,90,.30); border-radius: 11px; padding: 8px 15px; }
+  .guard .ic { font-size: 16px; color: #ffc24d; flex: 0 0 auto; }
+  .guard .gv { font-size: 17px; font-weight: 800; color: #ffc24d; flex: 0 0 auto; letter-spacing: .3px; }
+  .guard .gt { font-size: 11px; line-height: 1.42; color: #f0e0c8; }
+  .guard .gt b { color: #ffe1a6; font-weight: 800; }
+
+  /* 底栏 */
+  .foot { position: relative; z-index: 2; margin-top: 10px; }
+  .cta { font-size: 14px; font-weight: 800; text-align: center; letter-spacing: .3px;
+    background: linear-gradient(92deg, #7fd4ff, #b79bff 55%, #ffcf5c);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <section class="slide">
+    <!-- 头部 -->
+    <header class="head">
+      <div class="eyebrow">交付模式深化 · 人力堆叠 → AI 产能 · 流程 Agent 化 <span class="pg">／ 07</span></div>
+      <h1 class="title">把「人力堆叠」重构为「AI 产能」——换一套作业系统：人定义意图与把关，Agent 承担产能</h1>
+      <p class="thesis">让交付吞吐与团队规模<b>解耦</b>，关键不是"让 AI 多写代码"——2026 真瓶颈已从「写代码」<b>移到「评审·集成·验证」</b>，措施须照此重排资源。</p>
+    </header>
+
+    <!-- 作业流水线 -->
+    <div class="pipe">
+      <span class="lab">作业流水线</span>
+      <span class="chip"><b>意图 / Spec</b><br>人定义</span>
+      <span class="arw">→</span>
+      <span class="chip"><b>Agent 编队</b><br>实现 · 自测</span>
+      <span class="arw">→</span>
+      <span class="chip"><b>评审 · 门禁 · 验证</b><br>人把关</span>
+      <span class="arw">→</span>
+      <span class="chip"><b>合入 · 交付</b><br>可复制</span>
+      <span class="role">人定义与把关 · Agent 承担产能</span>
+    </div>
+
+    <!-- 四措施 -->
+    <div class="grid">
+      <!-- ① Spec 驱动 -->
+      <div class="card" style="--c1:#4f9bff;--c2:#7fd4ff;">
+        <div class="c-head"><div class="num">01</div><div><div class="nm">Spec 驱动 · 可执行契约</div><div class="en">SPEC-DRIVEN</div></div><span class="stage-tag">定义意图</span></div>
+        <div class="pts">
+          <div class="pt"><span>人写规格与验收：<b>constitution→specify→plan→tasks</b>，Spec 即唯一事实源</span></div>
+          <div class="pt"><span><b>Spec Kit / Kiro</b> 式流水线（规格→设计→任务→实现→校验），遏制架构漂移与返工</span></div>
+          <div class="pt"><span>规格库沉淀为资产，与<b>第 6 页知识底座</b>打通，可被任意 Agent 调用</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">SDD <b>2026 成业界新常态</b>——规格从「文档」变「可执行契约」</span></div>
+      </div>
+
+      <!-- ② Agent 编队 -->
+      <div class="card" style="--c1:#6e8bff;--c2:#9b8bff;">
+        <div class="c-head"><div class="num">02</div><div><div class="nm">Agent 编队 · 并行自治</div><div class="en">AGENT FLEET</div></div><span class="stage-tag">承担产能</span></div>
+        <div class="pts">
+          <div class="pt"><span>主控 Agent 分解 → 子 Agent <b>跨仓并行、长时自治</b>（worktree 隔离 / 背景执行）</span></div>
+          <div class="pt"><span>编排层管分派·并发·合并·冲突（<b>Claude Code 子代理 / Agent Teams</b>）</span></div>
+          <div class="pt"><span>产能来源：<b>加 Agent / 算力即扩产</b>，与编制解耦</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">多 Agent 编队＝<b>产能与人力解耦的物理来源</b>（主控分解→子代理并行）</span></div>
+      </div>
+
+      <!-- ③ 评审·集成·验证 -->
+      <div class="card" style="--c1:#00c2a8;--c2:#5fe0c0;">
+        <div class="c-head"><div class="num">03</div><div><div class="nm">评审·集成·验证 · 新瓶颈</div><div class="en">REVIEW &amp; INTEGRATION</div></div><span class="stage-tag">守质量</span></div>
+        <div class="pts">
+          <div class="pt"><span><span class="ins">洞察</span>：生成量↑但<b>主干吞吐 −7%、成功率 5 年最低</b> → 瓶颈从「写」移到「评审/集成」</span></div>
+          <div class="pt"><span>AI 预审 + 关键路径人工把关 + <b>自动化门禁</b>（测试生成+运行时验证）+ 合并编排</span></div>
+          <div class="pt"><span>把「人」集中投到<b>高杠杆的审查与架构</b>（呼应第 5 页质量保障）</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">主干吞吐 <b>−7%</b> / 成功率 <b>70.8%</b>（5 年最低）→ 评审·集成是新约束</span></div>
+      </div>
+
+      <!-- ④ 角色·考核·FinOps -->
+      <div class="card" style="--c1:#d0883c;--c2:#ffcf5c;">
+        <div class="c-head"><div class="num">04</div><div><div class="nm">角色·考核·FinOps · 固化</div><div class="en">ROLES · KPI · FINOPS</div></div><span class="stage-tag">横切固化</span></div>
+        <div class="pts">
+          <div class="pt"><span>角色：工程师 → <b>编排者 / Spec 作者 / 审查官</b>＋Agent 平台工程（小核心+大产能）</span></div>
+          <div class="pt"><span>考核：代码产量 → <b>一次通过率 · 审查效能 · 交付吞吐</b>；度量从「人月」切到「吞吐/单位成本」</span></div>
+          <div class="pt"><span>FinOps 按 <b>token/推理/GPU</b> 计单位交付成本，产能解耦编制但成本可治</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">AI 原生组织 <b>opex −20~40%</b> / <b>EBITDA margin +12–14pt</b>（需治理兑现）</span></div>
+      </div>
+    </div>
+
+    <!-- 护栏 -->
+    <div class="guard">
+      <span class="ic">⚠</span>
+      <span class="gv">11–14%</span>
+      <span class="gt">仅约一成企业 Agent 试点达<b>规模化生产</b>（2026.03）；而 75% 开发者将于 2028 用 AI agent——产能要"扩得动、也收得住"：<b>先试点 · 强编排治理 · 守 FinOps 单位成本</b>（呼应第 2 页 40% 取消、第 5 页四大保障）。</span>
+    </div>
+
+    <!-- 底栏 -->
+    <footer class="foot">
+      <div class="cta">产能不再随编制线性增长 —— 人定义意图与把关，Agent 承担产能，让交付吞吐与团队规模解耦</div>
+    </footer>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战略 PPT 第8页 · 现场定制 + 回流产品仓的资产飞轮</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: #05070f;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .stage { width: 1280px; height: 720px; transform: scale(var(--s, 1)); transform-origin: center center; }
+  @media (max-aspect-ratio: 16/9) { .stage { --s: calc(100vw / 1280); } }
+  @media (min-aspect-ratio: 16/9) { .stage { --s: calc(100vh / 720); } }
+
+  .slide {
+    position: relative; width: 1280px; height: 720px;
+    background:
+      radial-gradient(1100px 520px at 18% -8%, rgba(0,200,190,.18), transparent 60%),
+      radial-gradient(900px 480px at 100% 0%, rgba(140,86,255,.18), transparent 55%),
+      radial-gradient(820px 600px at 85% 110%, rgba(255,207,92,.10), transparent 60%),
+      linear-gradient(160deg, #0a1020 0%, #070b16 55%, #05070f 100%);
+    color: #eaf0fb; padding: 24px 42px 14px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .slide::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(120,160,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,160,255,.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 78%);
+    pointer-events: none;
+  }
+
+  /* 头部 */
+  .head { position: relative; z-index: 2; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; letter-spacing: 2.5px; color: #5fe0c0; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
+  .eyebrow::before { content: "◆"; color: #ffcf5c; font-size: 11px; }
+  .eyebrow .pg { color: #5f73a0; letter-spacing: 1px; font-weight: 600; }
+  h1.title { font-size: 22px; line-height: 1.26; font-weight: 800; letter-spacing: .3px;
+    background: linear-gradient(92deg, #ffffff 0%, #d2f3ec 50%, #a9eedd 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .thesis { margin-top: 7px; font-size: 12.8px; line-height: 1.48; color: #d3e0f5; font-weight: 500; padding-left: 13px; position: relative; }
+  .thesis::before { content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 4px; border-radius: 3px; background: linear-gradient(#5fe0c0, #8c56ff 60%, #ffcf5c); }
+  .thesis b { color: #ffcf5c; font-weight: 800; }
+
+  /* 定制谱系条 */
+  .spectrum { position: relative; z-index: 2; margin-top: 11px; display: flex; align-items: center; gap: 7px; }
+  .spectrum .lab { font-size: 9.5px; font-weight: 800; color: #6fe0c4; letter-spacing: .3px; flex: 0 0 auto; line-height: 1.2; text-align: center; }
+  .spectrum .axis { flex: 1; display: flex; align-items: stretch; gap: 6px; }
+  .spectrum .chip { flex: 1; text-align: center; font-size: 10.6px; font-weight: 700; color: #dcefe9;
+    background: linear-gradient(160deg, rgba(20,46,52,.7), rgba(14,22,38,.7)); border: 1px solid rgba(95,224,192,.22);
+    border-radius: 8px; padding: 6px 4px; line-height: 1.25; }
+  .spectrum .chip b { color: #fff; }
+  .spectrum .gtag { font-size: 9px; font-weight: 800; flex: 0 0 auto; padding: 0 1px; line-height: 1.15; text-align: center; }
+  .spectrum .gtag.gen { color: #7fd4ff; }
+  .spectrum .gtag.spec { color: #ffcf5c; }
+
+  /* 三措施 */
+  .cols { position: relative; z-index: 2; margin-top: 11px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; }
+  .col {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, rgba(24,34,60,.7), rgba(12,18,34,.68));
+    border: 1px solid rgba(120,160,255,.18); border-radius: 12px; padding: 12px 14px 11px;
+    display: flex; flex-direction: column;
+  }
+  .col::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--c1), var(--c2)); border-radius: 12px 12px 0 0; }
+  .c-head { display: flex; align-items: center; gap: 9px; }
+  .c-head .num { font-size: 13px; font-weight: 800; color: #0a1020; background: linear-gradient(120deg, var(--c1), var(--c2)); width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .c-head .nm { font-size: 15.5px; font-weight: 800; color: #fff; line-height: 1.08; }
+  .c-head .en { font-size: 8.8px; font-weight: 700; color: var(--c2); letter-spacing: 1px; margin-top: 1px; }
+  .dimtag { margin-top: 8px; display: inline-flex; align-self: flex-start; font-size: 9.8px; font-weight: 800; color: var(--c2);
+    background: rgba(127,212,255,.07); border: 1px solid var(--c2); border-radius: 20px; padding: 2px 9px; }
+  .pts { margin-top: 9px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .pt { font-size: 11px; line-height: 1.42; color: #c8d5ec; display: flex; gap: 6px; }
+  .pt::before { content: "▸"; color: var(--c2); font-weight: 800; flex: 0 0 auto; }
+  .pt b { color: #fff; font-weight: 700; }
+  .pt .em { color: #ffd87a; font-weight: 700; }
+  .anchor { margin-top: 8px; display: flex; align-items: flex-start; gap: 6px;
+    background: rgba(255,207,92,.08); border: 1px solid rgba(255,207,92,.24); border-radius: 8px; padding: 5px 10px; }
+  .anchor .ic { color: #ffd87a; font-size: 10px; line-height: 1.4; flex: 0 0 auto; }
+  .anchor .tx { font-size: 9.7px; color: #e3d6b8; line-height: 1.34; }
+  .anchor .tx b { color: #ffd87a; font-weight: 800; }
+
+  /* 资产飞轮 + 护栏 */
+  .flywheel { position: relative; z-index: 2; margin-top: 11px;
+    background: linear-gradient(100deg, rgba(0,180,160,.12), rgba(120,150,255,.07) 60%, rgba(255,207,92,.10));
+    border: 1px solid rgba(95,224,192,.28); border-radius: 12px; padding: 9px 15px; }
+  .fw-row { display: flex; align-items: center; gap: 7px; flex-wrap: nowrap; }
+  .fw-row .ttl { font-size: 11px; font-weight: 800; color: #6fe9d0; flex: 0 0 auto; letter-spacing: .3px; }
+  .fw-row .node { font-size: 10.8px; font-weight: 700; color: #e7f3ef; background: rgba(95,224,192,.08); border: 1px solid rgba(95,224,192,.22); border-radius: 7px; padding: 3px 9px; }
+  .fw-row .arw { color: #6fb8aa; font-size: 12px; font-weight: 800; flex: 0 0 auto; }
+  .fw-row .loop { font-size: 13px; color: #ffcf5c; font-weight: 800; flex: 0 0 auto; }
+  .fw-row .gain { font-size: 10.3px; font-weight: 800; color: #ffd87a; flex: 0 0 auto; margin-left: 2px; }
+  .fw-guard { margin-top: 7px; font-size: 10px; line-height: 1.4; color: #d8c8a6; }
+  .fw-guard .w { color: #ffc24d; font-weight: 800; }
+  .fw-guard b { color: #ffe1a6; font-weight: 700; }
+
+  /* 底栏 */
+  .foot { position: relative; z-index: 2; margin-top: 9px; }
+  .cta { font-size: 14px; font-weight: 800; text-align: center; letter-spacing: .3px;
+    background: linear-gradient(92deg, #5fe0c0, #b79bff 55%, #ffcf5c);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <section class="slide">
+    <!-- 头部 -->
+    <header class="head">
+      <div class="eyebrow">现场定制深化 · 一客一版 → 一平台 N 蓝图 · 交付资产化 <span class="pg">／ 08</span></div>
+      <h1 class="title">把「现场定制」做成资产飞轮——AI 现场快捷定制，再把可泛化定制「回流」产品仓</h1>
+      <p class="thesis">把「一客一版」的负债变成「一平台 N 蓝图」的资产：现场用 AI 快捷定制、把可泛化的定制<b>回流产品仓</b>，让交付越多、产品越强（借鉴 <b>Palantir FDE：每次现场交付即 R&D</b>）。</p>
+    </header>
+
+    <!-- 定制谱系条（维度①：哪些特性涉及现场定制） -->
+    <div class="spectrum">
+      <span class="lab">哪些特性<br>涉及定制</span>
+      <span class="gtag gen">通用·<br>易回流</span>
+      <div class="axis">
+        <span class="chip"><b>配置 / 阈值</b><br>配额·调度阈值·租户隔离</span>
+        <span class="chip"><b>国产化 / 昇腾适配</b><br>CANN·MindSpore·信创栈</span>
+        <span class="chip"><b>系统集成</b><br>监控·计费·工单·鉴权对接</span>
+        <span class="chip"><b>行业语义 / SLA</b><br>报表·合规口径·算子偏好</span>
+        <span class="chip"><b>品牌 / UI</b><br>白标·界面</span>
+      </div>
+      <span class="gtag spec">专属·<br>宜留存</span>
+    </div>
+
+    <!-- 三措施 -->
+    <div class="cols">
+      <!-- ① 现场快捷定制 -->
+      <div class="col" style="--c1:#00c2a8;--c2:#5fe0c0;">
+        <div class="c-head"><div class="num">01</div><div><div class="nm">现场快捷定制</div><div class="en">RAPID ON-SITE</div></div></div>
+        <div class="dimtag">维度②·现场如何定制</div>
+        <div class="pts">
+          <div class="pt"><span><b>内核/定制分离</b>：定制只走生成的适配/插件/<b>特性开关</b>层，绝不改主干 → 遏制分支爆炸</span></div>
+          <div class="pt"><span><b>现场 AI 交付助手</b>（接第6页知识底座+第7页 Spec 驱动）：自然语言需求 → 生成定制层+自测+现场验证</span></div>
+          <div class="pt"><span><span class="em">数据不出域</span>：气隙/私有化部署，代码与数据不出客户域（接第5页安全）</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx"><b>67%</b> 数据主权企业已转私有 AI 基础设施；气隙 agentic coding 成熟</span></div>
+      </div>
+
+      <!-- ② 定制甄别分级 -->
+      <div class="col" style="--c1:#6e8bff;--c2:#9b8bff;">
+        <div class="c-head"><div class="num">02</div><div><div class="nm">定制甄别分级</div><div class="en">TRIAGE</div></div></div>
+        <div class="dimtag">维度③·回流前置判断</div>
+        <div class="pts">
+          <div class="pt"><span>每项定制登记进<b>「定制资产目录」</b>，AI 评估复用潜力/通用性并打标</span></div>
+          <div class="pt"><span><b>通用 → 候选回流</b>；<b>专属 → 留客户适配层</b>，让回流有据可依</span></div>
+          <div class="pt"><span>量化各实例对主干的 <b>fork 偏离度</b>，预警「分支债务」</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">AI 跨 fork 发现高价值特性、按影响排序并<b>自动提 PR</b>（Forkscout 式，约省时 <b>480×</b>）</span></div>
+      </div>
+
+      <!-- ③ 回流泛化闭环 -->
+      <div class="col" style="--c1:#d0883c;--c2:#ffcf5c;">
+        <div class="c-head"><div class="num">03</div><div><div class="nm">回流泛化闭环</div><div class="en">UPSTREAM LOOP</div></div></div>
+        <div class="dimtag">维度③·如何回流产品仓</div>
+        <div class="pts">
+          <div class="pt"><span>AI 把专属实现<b>去具体化/泛化</b>为可配置通用特性 + 生成测试 + 兼容验证</span></div>
+          <div class="pt"><span>走 <b>InnerSource 贡献流水线</b>（Trusted Committer 评审+门禁）→ 入<b>产品主干/蓝图库</b></span></div>
+          <div class="pt"><span>回流后客户实例<b>自动 rebase</b>，消除分支债（范式：<b>Palantir FDE</b>）</span></div>
+        </div>
+        <div class="anchor"><span class="ic">▲</span><span class="tx">FDE「抽象客户需求为可复用组件、回流核心」，<b>2026 代码直接入主干仓</b>；OpenAI/Anthropic 效仿</span></div>
+      </div>
+    </div>
+
+    <!-- 资产飞轮 + 护栏 -->
+    <div class="flywheel">
+      <div class="fw-row">
+        <span class="ttl">资产飞轮</span>
+        <span class="node">现场定制</span><span class="arw">→</span>
+        <span class="node">甄别分级</span><span class="arw">→</span>
+        <span class="node">泛化回流</span><span class="arw">→</span>
+        <span class="node">沉淀蓝图</span><span class="arw">→</span>
+        <span class="node">下个客户复用</span>
+        <span class="loop">↻</span>
+        <span class="gain">每次交付即 R&D · 边际成本↓ · 产品力复利↑</span>
+      </div>
+      <div class="fw-guard"><span class="w">⚠ 护栏</span>：代码/数据<b>不出域</b>（第5页）· 回流须<b>过门禁、不污染主干</b> · <b>自动 rebase 防分支爆炸</b>（第3页）。</div>
+    </div>
+
+    <!-- 底栏 -->
+    <footer class="foot">
+      <div class="cta">把「一客一版」的负债变成「一平台 N 蓝图」的资产 —— 现场定制反哺产品，越交付越强</div>
+    </footer>
+  </section>
+</div>
+</body>
+</html>
