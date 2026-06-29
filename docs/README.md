@@ -33,6 +33,7 @@
 8. [08-IDE集成指南.md](08-IDE集成指南.md) — 在 VS Code 等 IDE 中集成使用。
 9. [09-最佳实践与排错.md](09-最佳实践与排错.md) — 高效使用技巧与常见问题排查。
 10. [10-TDD与SDD开发流程.md](10-TDD与SDD开发流程.md) — 测试驱动（TDD）与规格驱动（SDD）开发流程及最佳实践。
+11. [11-GitCode-Fork-PR开发流程指南.md](11-GitCode-Fork-PR开发流程指南.md) — 基于 Fork 模式的 GitCode PR 开发全流程（含流程图与各阶段最佳实践）。
 
 ---
 
